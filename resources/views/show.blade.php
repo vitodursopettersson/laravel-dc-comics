@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Comics</title>
-    @vite('resources/js/app.js')
 </head>
 
 <body>
-    <h1>Comics List</h1>
-    <ul>
-        @foreach ($comics as $comic)
-            <li>{{ $comic->title }} - <a href="{{ route('comics.show', $comic->id) }}">mostra dettagli</a></li>
-        @endforeach
-    </ul>
+    <h1>
+        {{ $comicDetail->title }}
+    </h1>
+    <img src="{{ $comicDetail->thumb }}" alt="">
+    <a href="{{ route('comics.index') }}">torna indietro</a>
 </body>
 
 </html>
