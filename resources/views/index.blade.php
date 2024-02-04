@@ -16,6 +16,7 @@
             <li>{{ $comic->title }} - <a href="{{ route('comics.show', $comic->id) }}">mostra dettagli</a></li>
         @endforeach
     </ul>
+    <a href="{{ route('comics.create') }}">Inserisci una nuova pasta</a>
 </body>
 
 </html>
