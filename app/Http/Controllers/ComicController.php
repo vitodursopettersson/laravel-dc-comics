@@ -61,22 +61,26 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comicEdit = Comic::findOrFail($id);
+        return view('edit', compact('comicEdit'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $edit = $request->all();
+        $comic->update($edit);
+        return redirect()->route('comics.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route(('comics.index'));
     }
 }
